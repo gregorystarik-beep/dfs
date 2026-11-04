@@ -15,6 +15,8 @@ def build_graph_from_api(api_url):
     else:##for online
         headers = {'User-Agent': 'DFS_Route_Project_Greg/1.0 (gregory.starik@gmail.com)'}##a dictionary who tells who am I
         r = requests.get(api_url, headers=headers,timeout=60)##we get the api give our info from the header and give a time limit
+
+
         print("Status:", r.status_code)
         print("Server Response:", r.text)
         if r.status_code != 200 or not r.text.strip():
